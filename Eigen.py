@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.sparse.linalg import eigs
 import scipy.sparse as sparse
+
 # Define a square matrix
 A = np.array([[4, 1, 2],
               [2, 3, 1],
@@ -13,8 +14,6 @@ print("Eigenvalues:", eigenvalues)
 print("Eigenvectors:\n", eigenvectors)
 
 
-
-# Example: Creating a large sparse matrix
 size = 1000  # Size of the matrix
 A_sparse = sparse.diags(A, shape=(size, size), format='csr')
 
