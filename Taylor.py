@@ -30,19 +30,18 @@ def taylor_series(function, a, n):
 def F(x):
     return sp.log(1 + x)
 
-# Example usage
 if __name__ == "__main__":
     x = sp.symbols('x')
-    # Define the function you want to approximate
+    # Function to approximate
     function = F(x)
     # Point around which to approximate
     a = 0
-    # Initially, let's not specify n; we'll determine it based on accuracy requirements
-    # n = 5  # This was arbitrary; let's find the required n for the desired accuracy
+   
 
-    # Instead of directly choosing n, let's find the minimum n required for the accuracy
+    # Find the minimum n required for the accuracy
     for n in range(1, 10):  # Start with 1 and incrementally test higher degrees
         approximation = taylor_series(function, a, n)
+        
         # Test the approximation at the endpoints of the interval [-0.5, 0.5]
         error_at_minus_half = abs(approximation.subs(x, -0.5) - function.subs(x, -0.5))
         error_at_half = abs(approximation.subs(x, 0.5) - function.subs(x, 0.5))
