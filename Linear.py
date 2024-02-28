@@ -95,9 +95,6 @@ if __name__ == "__main__":
 
 
 
-    # Use root_scalar with the bracket method, providing a bracket around x = 2
-    # We choose a small interval around 2 as we're told the root is around x = 2
+    # Using root_scalar with a bracket around root x = 2
     sol = root_scalar(F, bracket=[0.6, 1.6])
-
-    # Print the root, rounded to two decimal places
     print(f"The root of F(x) around x = 2 is: {sol.root:.2f}")
