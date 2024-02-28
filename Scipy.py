@@ -70,7 +70,6 @@ print(sol.root, sol.iterations, sol.function_calls)
 
 
 
-# Example usage
 x = 2e+100
 y = 4e+100
 distance = safe_euclidean_distance(x, y)
