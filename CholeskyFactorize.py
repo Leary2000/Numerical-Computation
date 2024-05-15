@@ -16,7 +16,7 @@ def forward_substitution(L, b):
 def backward_substitution(U, y):
     n = U.shape[0]
     x = np.zeros_like(y)
-
+    print("U: \n",U)
     for i in range(n - 1, -1, -1):
         x[i] = (y[i] - np.dot(U[i, i + 1:], x[i + 1:])) / U[i, i]
 
@@ -33,7 +33,6 @@ L = cholesky_decomposition(A)
 
 # Solve Ly=b
 y = forward_substitution(L, b)
-
 # Solve L^Tx=y
 x = backward_substitution(L.T, y)
 
@@ -43,5 +42,6 @@ verification = np.dot(A, x)
 # Outputs
 print("Cholesky factor L:\n", L)
 print("Solution x:\n", x)
+# Check if verfication and b matrix are the same
 print("Verification (Ax):\n", verification)
 print("B Matrix :\n", b)
